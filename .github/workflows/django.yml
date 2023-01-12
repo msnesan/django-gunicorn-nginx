@@ -44,6 +44,8 @@ jobs:
             git pull
             python manage.py collectstatic
             yes
+            sudo killall gunicorn
+            gunicorn -c config/gunicorn/dev.py
             
     - name: Run Tests
       run: |
