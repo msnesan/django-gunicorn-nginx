@@ -34,8 +34,7 @@ jobs:
           TARGET: ${{ secrets.REMOTE_TARGET }}
     
           SCRIPT_BEFORE: |
-            whoami
-            ls -al            
+                        
           SCRIPT_AFTER: |
             whoami
             ls -al
@@ -43,7 +42,7 @@ jobs:
             source venv/bin/activate
             cd /home/ubuntu/django-gunicorn-nginx
             git pull
-            python manage.py collectstatic
+            python manage.py collectstatic | yes
             
     - name: Run Tests
       run: |
