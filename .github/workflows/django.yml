@@ -42,7 +42,8 @@ jobs:
             source venv/bin/activate
             cd /home/ubuntu/django-gunicorn-nginx
             git pull
-            python manage.py collectstatic | yes
+            python manage.py collectstatic
+            yes
             
     - name: Run Tests
       run: |
